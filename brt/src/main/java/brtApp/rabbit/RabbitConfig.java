@@ -1,4 +1,4 @@
-package com.example.cdr.rabbit;
+package brtApp.rabbit;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.Binding;
@@ -41,4 +41,6 @@ public class RabbitConfig {
     public Binding binding(Queue queue, DirectExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(cdrRoutingKey);
     }
+
+
 }
