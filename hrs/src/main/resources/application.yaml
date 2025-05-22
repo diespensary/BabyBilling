@@ -1,0 +1,27 @@
+spring.application.name: hrs
+
+server:
+  port: 8082
+
+
+spring:
+
+  datasource:
+    #    platform: postgres
+    url: "jdbc:postgresql://postgres_hrs:5432/hrs_db"
+    username: user
+    password: password
+    driverClassName: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+
+  liquibase:
+    enabled: true
+    change-log: db/changelog/db.changelog-master.yaml
+    default-schema: public
+
+brt:
+  service:
+    url: "http://brt:8081"
