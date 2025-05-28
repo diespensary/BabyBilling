@@ -88,7 +88,7 @@ services:
       - romashka-network
 
   hrs:
-    build: ./hrs
+    build: hrs-service
     container_name: hrs
     ports:
       - "8082:8082"
@@ -99,7 +99,7 @@ services:
       - romashka-network
 
   crm:
-    build: ./crm
+    build: crm-service
     container_name: crm
     ports:
       - "8083:8083"
