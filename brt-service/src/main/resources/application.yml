@@ -1,0 +1,36 @@
+spring:
+  # 1) PostgreSQL
+  datasource:
+    url: jdbc:postgresql://localhost:5432/brt_db
+    username: brt_user
+    password: brt_pass
+    driver-class-name: org.postgresql.Driver
+
+billing:
+  send:
+    delay: 15000
+
+  # 2) JPA / Hibernate
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  # 3) Flyway
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  # 4) RabbitMQ
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+
+# AMQP
+logging:
+  level:
+    org.springframework.amqp: DEBUG
